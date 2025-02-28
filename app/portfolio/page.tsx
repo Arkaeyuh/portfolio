@@ -25,10 +25,10 @@ export default function Portfolio() {
             <SocialIcon url="https://github.com/Arkaeyuh/Shadows-Of-Lumina" target="_blank" className="transition-transform duration-300 hover:scale-110" />
           </div>
           <div className="bg-gray-900 p-5 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
-            <h2 className="text-2xl font-bold mb-4 text-center text-violet-700">Motiva-Clock</h2>
-            <Image className="rounded-xl shadow-md mb-4" src="/sol2.png" alt="Shadows of Lumina" width={700} height={500} />
-            <p className="mb-4 text-center">Motiva-Clock is a way to start your day with inspiration. Built with Flutter for Android, you can schedule an alarm in the morning, and in order to stop the alarm, you must type in the displayed inspirational quote in order to start your day with motivation.</p>
-            <SocialIcon url="https://github.com/Arkaeyuh/Shadows-Of-Lumina" target="_blank" className="transition-transform duration-300 hover:scale-110" />
+            <h2 className="text-2xl font-bold mb-4 text-center text-violet-700">Bobapos</h2>
+            <Image className="rounded-xl shadow-md mb-4" src="/bobapos.png" alt="Bobapos" width={700} height={500} />
+            <p className="mb-4 text-center">Bobapos is a fully fledged Point-Of-Sales system designed for a boba shop. Implemented using Java Swing and PostgreSQL, it allows for employee authentication, sales analysis, and much more.</p>
+            <SocialIcon url="https://github.com/CSCE331-Spring2025/project2-team43" target="_blank" className="transition-transform duration-300 hover:scale-110" />
           </div>
         </div>
 
