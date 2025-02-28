@@ -1,48 +1,47 @@
 'use client'
- 
+
 import Link from 'next/link';
 import ParticleBackground from '@/components/ParticleBackground';
-import { useState, useMemo, memo } from 'react';
+import { useState, useMemo } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-    const [status, setStatus] = useState('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('Sending...');
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-        setStatus('Sending...');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+      if (response.ok) {
+        setStatus('Message Sent!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Failed to send message. Please try again.');
+      }
+    } catch {
+      setStatus('Failed to send message. Please try again.');
+    }
+  };
 
-            if (response.ok) {
-                setStatus('Message Sent!');
-                setFormData({ name: '', email: '', message: '' });
-            } else {
-                setStatus('Failed to send message. Please try again.');
-            } 
-        } catch (error) {
-            setStatus('Failed to send message. Please try again.');
-        }
-    };
-
-    const memoizedParticleBackground = useMemo(() => <ParticleBackground />, []);
+  const memoizedParticleBackground = useMemo(() => <ParticleBackground />, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-back text-white scrollbar-hide">
@@ -51,7 +50,7 @@ export default function Contact() {
       <section className="relative flex flex-col items-center justify-start pt-[15vh] space-y-8">
         <h1 className="text-4xl font-bold text-violet-700">Contact Me</h1>
         <p className="text-lg text-center max-w-xl">
-          I'm always open to discussing new projects, creative ideas, or opportunities.
+          I&apos;m always open to discussing new projects, creative ideas, or opportunities.
           Feel free to drop a message!
         </p>
 

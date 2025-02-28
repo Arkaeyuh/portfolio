@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
 import ParticleBackground from '@/components/ParticleBackground';
-
 import { SocialIcon } from 'react-social-icons';
 
 export default function Portfolio() {
@@ -21,7 +19,7 @@ export default function Portfolio() {
           <div className="bg-gray-900 p-5 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">
             <h2 className="text-2xl font-bold mb-4 text-center text-violet-700">Shadows of Lumina</h2>
             <Image className="rounded-xl shadow-md mb-4" src="/sol2.png" alt="Shadows of Lumina" width={700} height={500} />
-            <p className="mb-4 text-center">Shadows Of Lumina is a Binding of Isaac inspired dungeon crawler game built entirely in the pyGame library. It was built in 36 hours for the HackRice 14 event, where it won 1st place in the First Timers' Game Development Track</p>
+            <p className="mb-4 text-center">Shadows Of Lumina is a Binding of Isaac inspired dungeon crawler game built entirely in the pyGame library. It was built in 36 hours for the HackRice 14 event, where it won 1st place in the First Timers&apos; Game Development Track</p>
             <SocialIcon url="https://github.com/Arkaeyuh/Shadows-Of-Lumina" target="_blank" className="transition-transform duration-300 hover:scale-110" />
           </div>
           <div className="bg-gray-900 p-5 rounded-xl shadow-md transform transition-transform duration-300 hover:scale-105">

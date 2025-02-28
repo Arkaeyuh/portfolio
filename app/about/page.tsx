@@ -12,9 +12,9 @@ export default function About() {
           <div className="text-lg leading-loose max-w-xl rounded-xl shadow-md bg-gray-900 p-5 transform transition-transform duration-300 hover:scale-105">
             <h1 className="text-3xl font-bold mb-4 text-violet-700">About Me</h1>
             <p>
-              Hello, I'm Alex Greene. I'm a Computer Science Honors and Mathematics Minor student at Texas A&M University, class of 2026.
-              I've currently worked on a few projects and I'm interested in Full-Stack and Mobile Application development. 
-              I currently specialize in React, Next.js, and Tailwind CSS, but I'm always looking to learn more.
+              Hello, I&apos;m Alex Greene. I&apos;m a Computer Science Honors and Mathematics Minor student at Texas A&amp;M University, class of 2026.
+              I&apos;ve currently worked on a few projects and I&apos;m interested in Full-Stack and Mobile Application development. 
+              I currently specialize in React, Next.js, and Tailwind CSS, but I&apos;m always looking to learn more.
               You can check out some of my{' '}
               <Link href="/portfolio">
                 <span className="font-bold text-violet-700 hover:text-violet-500 transition-colors duration-200">Projects</span>

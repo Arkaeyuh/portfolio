@@ -27,8 +27,12 @@ export async function POST(request: NextRequest){
         await transporter.sendMail(mailOptions);
         return NextResponse.json({ success: true });
 
-    } catch(e: any){
-        console.log(e);
+    } catch(e: unknown) {
+        if (e instanceof Error){
+            console.log(e.message);
+        } else{
+            console.log("An unknown error ocurred");
+        }
         return NextResponse.json({ success: false });
     }
 
