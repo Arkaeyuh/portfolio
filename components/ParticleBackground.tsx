@@ -32,13 +32,28 @@ const ParticleBackground: React.FC = () => {
     interactivity: {
       events: {
         onClick: { enable: false },
-        onHover: { enable: false },
+        onHover: {
+          enable: true,
+          mode: "repulse", // Particles will move away from the mouse
+        },
+      },
+      modes: {
+        repulse: {
+          distance: 50, // Distance for repulse effect
+          duration: 0.1,
+        },
       },
     },
     particles: {
-      color: { value: "#ffffff" },
+      color: {
+        value: ["#ffffff"], // Gradient colors
+      },
       links: {
-        enable: false, // No connecting lines between particles
+        enable: true, // No connecting lines between particles
+        color: "#ffffff",
+        distance: 150,
+        opacity: 0.5,
+        width: 1,
       },
       collisions: { enable: false },
       move: {
@@ -50,17 +65,23 @@ const ParticleBackground: React.FC = () => {
         outModes: { default: "out" as const },
       },
       number: {
-        value: 80, // Number of stars
+        value: 100, // Number of stars
         density: {
           enable: true,
           area: 800, // Controls star density relative to screen area
         },
       },
       opacity: {
-        value: 0.8,
+        value: { min: 0.3, max: 0.8 }, // Twinkling effect
+        animation: {
+          enable: true,
+          speed: 1,
+          minimumValue: 0.3,
+          sync: false,
+        },
       },
       shape: {
-        type: "circle",
+        type: ["circle", "triangle", "star"], // Different shapes
       },
       size: {
         value: { min: 0.5, max: 2 },
